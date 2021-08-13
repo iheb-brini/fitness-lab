@@ -5,7 +5,7 @@ class AlexNet(nn.Module):
     def __init__(self, input_channel=1, **kwargs):
         self.input_channel = input_channel
         super().__init__()
-        self.encorder = nn.Sequential(
+        self.encoder = nn.Sequential(
             nn.Conv2d(self.input_channel, 96, kernel_size=11,
                       stride=4, padding=1), nn.ReLU(),
             nn.MaxPool2d(kernel_size=(3, 3), stride=2),
@@ -27,6 +27,6 @@ class AlexNet(nn.Module):
         )
 
     def forward(self, x):
-        x = self.encorder(x)
+        x = self.encoder(x)
         x = self.classifier(x)
         return x

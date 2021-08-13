@@ -3,8 +3,8 @@ from mxnet.gluon import nn
 class AlexNet(nn.Block):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.encorder = nn.Sequential()
-        self.encorder.add(
+        self.encoder = nn.Sequential()
+        self.encoder.add(
             nn.Conv2D(channels=96, kernel_size=(11, 11),
                       strides=4, activation='relu'),
             nn.MaxPool2D(pool_size=(3, 3), strides=2),
@@ -30,4 +30,4 @@ class AlexNet(nn.Block):
         )
 
     def forward(self, x):
-        return self.classifier(self.encorder(x))
+        return self.classifier(self.encoder(x))
