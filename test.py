@@ -1,15 +1,11 @@
-from re import I
-from mxnet import np,npx
+import torch
+from Modules.nn.architectures._pytorch import AlexNet
 
-from Modules.nn.architectures._mxnet import AlexNet
-from Modules.nn.architectures._mxnet import Vgg
+net = AlexNet(input_channel=3)
 
-npx.set_np()
+X= torch.randn(size=(1,3,224,224))
 
-X = np.random.uniform(size=(1,1,224,224))
 
-net = Vgg()
-net.initialize()
 
-pred = net(X)
+pred = net(X)   
 print(pred.shape)
