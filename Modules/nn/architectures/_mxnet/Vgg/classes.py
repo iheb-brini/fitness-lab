@@ -27,7 +27,7 @@ class Vgg(nn.Block):
         self.classifier.add(
             nn.Dense(4096, activation='relu'), nn.Dropout(0.5),
             nn.Dense(4096, activation='relu'), nn.Dropout(0.5),
-            nn.Dense(1000)
+            nn.Dense(10)
         )
 
     def forward(self, x):
