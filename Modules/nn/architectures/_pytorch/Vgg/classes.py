@@ -1,10 +1,7 @@
 from torch import nn
 from .constants import CONV_ARCH
-# %%
-
 
 def vgg_block(num_conv, in_channels, out_channels):
-    #blk = nn.Sequential()
     layers = []
     for _ in range(num_conv):
         layers.append(
