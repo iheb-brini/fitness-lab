@@ -1,6 +1,6 @@
 from mxnet.gluon import nn
 from .constants import CONV_ARCH
-#%%
+
 def vgg_block(num_conv, num_channels):
     blk = nn.Sequential()
     for _ in range(num_conv):
