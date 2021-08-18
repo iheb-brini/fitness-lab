@@ -1,9 +1,14 @@
-import torch
-from Modules.nn.architectures._pytorch import Vgg
+from mxnet import np,npx
+from Modules.nn.architectures._mxnet import DenseNet
 
-X = torch.randn(size=(1, 3, 224, 224))
 
-net = Vgg(in_channels=3)
+npx.set_np()
 
-pred = net(X)
-print(pred.shape)
+X = np.random.uniform(size=(1, 1, 224, 224))
+
+net = DenseNet()
+net.initialize()
+
+for layer in net.blocks:
+    X = layer(X)
+    print(layer.name, 'output shape:\t', X.shape)
