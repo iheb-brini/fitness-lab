@@ -1,12 +1,12 @@
 from mxnet import np,npx
-from Modules.nn.architectures._mxnet import DenseNet
+from Modules.nn.architectures._mxnet import ResNet
 
 
 npx.set_np()
 
-X = np.random.uniform(size=(1, 1, 224, 224))
+X = np.random.uniform(size=(1, 3, 224, 224))
 
-net = DenseNet()
+net = ResNet()
 net.initialize()
 
 for layer in net.blocks:
