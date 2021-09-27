@@ -3,9 +3,6 @@
 /data
 
 /Modules/nn/components
-
-/Modules/dataset
-/Modules/train
 /Modules/visualization
 
 requirements.txt
