@@ -5,7 +5,6 @@
 /Modules/nn/components
 /Modules/visualization
 
-requirements.txt
 setup.py
 #test.py
 main.py
