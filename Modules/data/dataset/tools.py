@@ -1,29 +1,35 @@
-import torchvision
-from torchvision import transforms
-from torch.utils import data
+import torch
+import matplotlib.pyplot as plt
+
+#################
+# Fashion-MNist #
+#################
+
+def get_fashion_mnist_labels(labels):
+    """Return text labels for the Fashion-MNIST dataset."""
+    text_labels = [
+        't-shirt', 'trouser', 'pullover', 'dress', 'coat', 'sandal', 'shirt',
+        'sneaker', 'bag', 'ankle boot']
+
+    return [text_labels[int(idx)] for idx in labels]
 
 
-def load_data_fashion_mnist(root, batch_size,
-                            resize=None, num_worker=4):
-    """Download the Fashion-MNIST dataset and then load it into memory."""
-    operations = []
-    if resize:
-        operations.append(transforms.Resize(resize))
+def show_images(imgs, num_rows, num_cols, titles=None, scale=1.5): 
+    """Plot a list of images."""
+    figsize = (num_cols * scale, num_rows * scale)
+    _, axes = plt.subplots(num_rows, num_cols, figsize=figsize)
+    axes = axes.flatten()
+    for i, (ax, img) in enumerate(zip(axes, imgs)):
+        if torch.is_tensor(img):
+            # Tensor Image
+            ax.imshow(img.numpy())
+        else:
+            # PIL Image
+            ax.imshow(img)
+        ax.axes.get_xaxis().set_visible(False)
+        ax.axes.get_yaxis().set_visible(False)
+        if titles:
+            ax.set_title(titles[i])
+    return axes
 
-    operations.append(transforms.ToTensor())
 
-    trs = transforms.Compose(operations)
-
-    mnist_train = torchvision.datasets.FashionMNIST(
-        root=root, train=True, transform=trs, download=True)
-
-    mnist_test = torchvision.datasets.FashionMNIST(
-        root=root, train=False, transform=trs, download=True)
-
-    train_iter = data.DataLoader(mnist_train, batch_size,
-                                 shuffle=True, num_workers=num_worker)
-
-    test_iter = data.DataLoader(mnist_test, batch_size,
-                                shuffle=False, num_workers=num_worker)
-
-    return train_iter, test_iter
