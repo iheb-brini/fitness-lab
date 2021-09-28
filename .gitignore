@@ -9,6 +9,9 @@ setup.py
 #test.py
 main.py
 
+## lightning
+lightning_logs
+
 ## VScode
 .vscode/*
 !.vscode/settings.json
