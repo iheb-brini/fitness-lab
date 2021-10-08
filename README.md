@@ -47,3 +47,19 @@ ______________________________________________________________________
 - [Numpy](https://numpy.org/)
 - [Matplotlib](https://matplotlib.org/)
 - [Pillow](https://pillow.readthedocs.io/en/stable/)
+
+
+### File Stucture
+app.py : main flask app
+uploads : uploaded audio files
+modules 
+modules
+├── data
+├── nn
+├── noise
+├── train
+├── utility
+
+I like using modules as a convension to organize my code and to build reusalbe modules.
+* classes : contains every class in the module
+* tools : are stateless and covers custom functions 
