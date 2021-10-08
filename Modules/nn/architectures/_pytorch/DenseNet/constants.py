@@ -1,1 +1,0 @@
-NUM_CONVS_IN_DENSE_BLOCKS = [4, 4, 4, 4]
