@@ -1,4 +1,5 @@
 # fitness-lab
+
 This is a personal reference for basic deep learning tools.
 
 The implementation is heavily based on the book **Dive into deep learning**
@@ -11,7 +12,9 @@ The implementation is heavily based on the book **Dive into deep learning**
     year={2021}
 }
 ```
+
 ## Tools used:
+
 ### Frameworks:
 
 <div align="center">
@@ -28,7 +31,6 @@ ______________________________________________________________________
 </p>
 ______________________________________________________________________
 
-
 <img src="docs/source/_static/images/pl_logo.png" width="400px">
 
 **The lightweight PyTorch wrapper for high-performance AI research.
@@ -44,20 +46,18 @@ ______________________________________________________________________
 
 ### libraries:
 
-- [Numpy](https://numpy.org/)
-- [Matplotlib](https://matplotlib.org/)
-- [Pillow](https://pillow.readthedocs.io/en/stable/)
-
+* [Numpy](https://numpy.org/)
+* [Matplotlib](https://matplotlib.org/)
+* [Pillow](https://pillow.readthedocs.io/en/stable/)
 
 ### File Stucture
-app.py : main flask app
-uploads : uploaded audio files
-modules 
+
 modules
-├── data
-├── nn
-├── noise
-├── train
+
+├── data \
+├── nn \
+├── noise \
+├── train \
 ├── utility
 
 I like using modules as a convension to organize my code and to build reusalbe modules.
