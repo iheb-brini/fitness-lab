@@ -7,6 +7,7 @@ class AbstractPredictor(ABC):
         pass
 
 
+
 class Prediction:
     predictor: AbstractPredictor
 
@@ -15,3 +16,4 @@ class Prediction:
 
     def run(self, model, x, **kwargs):
         return self.predictor.predict(model, x, **kwargs)
+
